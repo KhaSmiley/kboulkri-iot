@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: playground
+spec:
+  type: LoadBalancer   # exposed on the node, reached via k3d's "-p 8888:8888@loadbalancer"
+  selector:
+    app: playground
+  ports:
+    - port: 8888
+      targetPort: 8888
